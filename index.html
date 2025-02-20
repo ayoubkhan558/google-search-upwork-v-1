@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Search</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header with Google Services -->
+        <header class="header">
+            <nav class="services-nav">
+                <button id="servicesDropdown" class="services-button apps-btn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M2 16C1.45 16 0.979167 15.8042 0.5875 15.4125C0.195833 15.0208 0 14.55 0 14C0 13.45 0.195833 12.9792 0.5875 12.5875C0.979167 12.1958 1.45 12 2 12C2.55 12 3.02083 12.1958 3.4125 12.5875C3.80417 12.9792 4 13.45 4 14C4 14.55 3.80417 15.0208 3.4125 15.4125C3.02083 15.8042 2.55 16 2 16ZM8 16C7.45 16 6.97917 15.8042 6.5875 15.4125C6.19583 15.0208 6 14.55 6 14C6 13.45 6.19583 12.9792 6.5875 12.5875C6.97917 12.1958 7.45 12 8 12C8.55 12 9.02083 12.1958 9.4125 12.5875C9.80417 12.9792 10 13.45 10 14C10 14.55 9.80417 15.0208 9.4125 15.4125C9.02083 15.8042 8.55 16 8 16ZM14 16C13.45 16 12.9792 15.8042 12.5875 15.4125C12.1958 15.0208 12 14.55 12 14C12 13.45 12.1958 12.9792 12.5875 12.5875C12.9792 12.1958 13.45 12 14 12C14.55 12 15.0208 12.1958 15.4125 12.5875C15.8042 12.9792 16 13.45 16 14C16 14.55 15.8042 15.0208 15.4125 15.4125C15.0208 15.8042 14.55 16 14 16ZM2 10C1.45 10 0.979167 9.80417 0.5875 9.4125C0.195833 9.02083 0 8.55 0 8C0 7.45 0.195833 6.97917 0.5875 6.5875C0.979167 6.19583 1.45 6 2 6C2.55 6 3.02083 6.19583 3.4125 6.5875C3.80417 6.97917 4 7.45 4 8C4 8.55 3.80417 9.02083 3.4125 9.4125C3.02083 9.80417 2.55 10 2 10ZM8 10C7.45 10 6.97917 9.80417 6.5875 9.4125C6.19583 9.02083 6 8.55 6 8C6 7.45 6.19583 6.97917 6.5875 6.5875C6.97917 6.19583 7.45 6 8 6C8.55 6 9.02083 6.19583 9.4125 6.5875C9.80417 6.97917 10 7.45 10 8C10 8.55 9.80417 9.02083 9.4125 9.4125C9.02083 9.80417 8.55 10 8 10ZM14 10C13.45 10 12.9792 9.80417 12.5875 9.4125C12.1958 9.02083 12 8.55 12 8C12 7.45 12.1958 6.97917 12.5875 6.5875C12.9792 6.19583 13.45 6 14 6C14.55 6 15.0208 6.19583 15.4125 6.5875C15.8042 6.97917 16 7.45 16 8C16 8.55 15.8042 9.02083 15.4125 9.4125C15.0208 9.80417 14.55 10 14 10ZM2 4C1.45 4 0.979167 3.80417 0.5875 3.4125C0.195833 3.02083 0 2.55 0 2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0C2.55 0 3.02083 0.195833 3.4125 0.5875C3.80417 0.979167 4 1.45 4 2C4 2.55 3.80417 3.02083 3.4125 3.4125C3.02083 3.80417 2.55 4 2 4ZM8 4C7.45 4 6.97917 3.80417 6.5875 3.4125C6.19583 3.02083 6 2.55 6 2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0C8.55 0 9.02083 0.195833 9.4125 0.5875C9.80417 0.979167 10 1.45 10 2C10 2.55 9.80417 3.02083 9.4125 3.4125C9.02083 3.80417 8.55 4 8 4ZM14 4C13.45 4 12.9792 3.80417 12.5875 3.4125C12.1958 3.02083 12 2.55 12 2C12 1.45 12.1958 0.979167 12.5875 0.5875C12.9792 0.195833 13.45 0 14 0C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2C16 2.55 15.8042 3.02083 15.4125 3.4125C15.0208 3.80417 14.55 4 14 4ZM2 4C1.45 4 0.979167 3.80417 0.5875 3.4125C0.195833 3.02083 0 2.55 0 2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0C2.55 0 3.02083 0.195833 3.4125 0.5875C3.80417 0.979167 4 1.45 4 2C4 2.55 3.80417 3.02083 3.4125 3.4125C3.02083 3.80417 2.55 4 2 4ZM8 4C7.45 4 6.97917 3.80417 6.5875 3.4125C6.19583 3.02083 6 2.55 6 2C6 1.45 6.19583 0.979167 6.5875 0.5875C6.97917 0.195833 7.45 0 8 0C8.55 0 9.02083 0.195833 9.4125 0.5875C9.80417 0.979167 10 1.45 10 2C10 2.55 9.80417 3.02083 9.4125 3.4125C9.02083 3.80417 8.55 4 8 4ZM14 4C13.45 4 12.9792 3.80417 12.5875 3.4125C12.1958 3.02083 12 2.55 12 2C12 1.45 12.1958 0.979167 12.5875 0.5875C12.9792 0.195833 13.45 0 14 0C14.55 0 15.0208 0.195833 15.4125 0.5875C15.8042 0.979167 16 1.45 16 2C16 2.55 15.8042 3.02083 15.4125 3.4125C15.0208 3.80417 14.55 4 14 4Z"
+                            fill="#1C1B1F" />
+                    </svg>
+                </button>
+                <div class="services-menu hidden">
+                    <a href="https://mail.google.com" class="service-item">
+                        <img src="img/icon-gmail.svg" alt="Gmail" class="service-icon" />
+                        <span class="service-name">Gmail</span>
+                    </a>
+                    <a href="https://drive.google.com" class="service-item">
+                        <img src="img/icon-drive.svg" alt="Drive" class="service-icon" />
+                        <span class="service-name">Drive</span>
+                    </a>
+                    <a href="https://translate.google.com" class="service-item">
+                        <img src="img/icon-translate.svg" alt="Translate" class="service-icon" />
+                        <span class="service-name">Translate</span>
+                    </a>
+                    <a href="https://maps.google.com" class="service-item">
+                        <img src="img/icon-maps.svg" alt="Maps" class="service-icon" />
+                        <span class="service-name">Maps</span>
+                    </a>
+                    <a href="https://calendar.google.com" class="service-item">
+                        <img src="img/icon-calendar.svg" alt="Calendar" class="service-icon" />
+                        <span class="service-name">Calendar</span>
+                    </a>
+                    <a href="https://sheets.google.com" class="service-item">
+                        <img src="img/icon-sheets.svg" alt="Sheets" class="service-icon" />
+                        <span class="service-name">Sheets</span>
+                    </a>
+                    <a href="https://docs.google.com" class="service-item">
+                        <img src="img/icon-docs.svg" alt="Docs" class="service-icon" />
+                        <span class="service-name">Docs</span>
+                    </a>
+                    <a href="https://slides.google.com" class="service-item">
+                        <img src="img/icon-slides.svg" alt="Slides" class="service-icon" />
+                        <span class="service-name">Slides</span>
+                    </a>
+                    <a href="https://earth.google.com" class="service-item">
+                        <img src="img/icon-earth.svg" alt="Earth" class="service-icon" />
+                        <span class="service-name">Earth</span>
+                    </a>
+                    <a href="https://meet.google.com" class="service-item">
+                        <img src="img/icon-meet.svg" alt="Meet" class="service-icon" />
+                        <span class="service-name">Meet</span>
+                    </a>
+                    <a href="https://forms.google.com" class="service-item">
+                        <img src="img/icon-forms.svg" alt="Forms" class="service-icon" />
+                        <span class="service-name">Forms</span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Search Section -->
+        <main class="search-section">
+
+            <div class="search-container">
+                <div class="search-box">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0H16V16H0V0Z" stroke="#E5E7EB" />
+                        <g clip-path="url(#clip0_14213_1073)">
+                            <path
+                                d="M13 6.5C13 7.93437 12.5344 9.25938 11.75 10.3344L15.7063 14.2937C16.0969 14.6844 16.0969 15.3188 15.7063 15.7094C15.3156 16.1 14.6812 16.1 14.2906 15.7094L10.3344 11.75C9.25938 12.5375 7.93437 13 6.5 13C2.90937 13 0 10.0906 0 6.5C0 2.90937 2.90937 0 6.5 0C10.0906 0 13 2.90937 13 6.5ZM6.5 11C7.09095 11 7.67611 10.8836 8.22208 10.6575C8.76804 10.4313 9.26412 10.0998 9.68198 9.68198C10.0998 9.26412 10.4313 8.76804 10.6575 8.22208C10.8836 7.67611 11 7.09095 11 6.5C11 5.90905 10.8836 5.32389 10.6575 4.77792C10.4313 4.23196 10.0998 3.73588 9.68198 3.31802C9.26412 2.90016 8.76804 2.56869 8.22208 2.34254C7.67611 2.1164 7.09095 2 6.5 2C5.90905 2 5.32389 2.1164 4.77792 2.34254C4.23196 2.56869 3.73588 2.90016 3.31802 3.31802C2.90016 3.73588 2.56869 4.23196 2.34254 4.77792C2.1164 5.32389 2 5.90905 2 6.5C2 7.09095 2.1164 7.67611 2.34254 8.22208C2.56869 8.76804 2.90016 9.26412 3.31802 9.68198C3.73588 10.0998 4.23196 10.4313 4.77792 10.6575C5.32389 10.8836 5.90905 11 6.5 11Z"
+                                fill="#9CA3AF" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_14213_1073">
+                                <path d="M0 0H16V16H0V0Z" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input" autocomplete="off"
+                        placeholder="Search or type a URL" />
+                    <button id="voiceSearch" class="voice-search-btn" title="Search by voice">
+                        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_14213_1081)">
+                                <g clip-path="url(#clip1_14213_1081)">
+                                    <path
+                                        d="M6 0C4.34375 0 3 1.34375 3 3V8C3 9.65625 4.34375 11 6 11C7.65625 11 9 9.65625 9 8V3C9 1.34375 7.65625 0 6 0ZM2 6.75C2 6.33437 1.66562 6 1.25 6C0.834375 6 0.5 6.33437 0.5 6.75V8C0.5 10.7844 2.56875 13.0844 5.25 13.45V14.5H3.75C3.33437 14.5 3 14.8344 3 15.25C3 15.6656 3.33437 16 3.75 16H6H8.25C8.66562 16 9 15.6656 9 15.25C9 14.8344 8.66562 14.5 8.25 14.5H6.75V13.45C9.43125 13.0844 11.5 10.7844 11.5 8V6.75C11.5 6.33437 11.1656 6 10.75 6C10.3344 6 10 6.33437 10 6.75V8C10 10.2094 8.20937 12 6 12C3.79063 12 2 10.2094 2 8V6.75Z"
+                                        fill="#4B5563" />
+                                </g>
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_14213_1081">
+                                    <rect width="12" height="16" fill="white" />
+                                </clipPath>
+                                <clipPath id="clip1_14213_1081">
+                                    <path d="M0 0H12V16H0V0Z" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </button>
+                </div>
+                <div id="searchSuggestions" class="search-suggestions hidden"></div>
+            </div>
+
+            <!-- Speed Dial Section -->
+            <div class="speed-dial-section">
+                <div id="speedDialContainer" class="speed-dial-container">
+                    <!-- Speed dial items will be dynamically added here -->
+                    <div class="speed-dial-item add-item">
+                        <button id="addSpeedDial" class="add-speed-dial">
+                            <div class="speed-dial-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4V20M4 12H20" stroke="#4B5563" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <span class="speed-dial-name">Add New</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Speed Dial Modal -->
+                <div id="speedDialModal" class="modal hidden">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 id="modalTitle">Add Speed Dial</h3>
+                            <button id="closeModal" class="close-button">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6L18 18" stroke="#4B5563" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="speedDialForm">
+                                <div class="form-group">
+                                    <label for="siteName">Name</label>
+                                    <input type="text" id="siteName" required placeholder="e.g., YouTube">
+                                </div>
+                                <div class="form-group">
+                                    <label for="siteUrl">URL</label>
+                                    <input type="url" id="siteUrl" required placeholder="https://www.example.com">
+                                </div>
+                                <input type="hidden" id="editIndex" value="">
+                                <div class="modal-buttons">
+                                    <button type="button" id="cancelSpeedDial" class="button-secondary">Cancel</button>
+                                    <button type="submit" class="button-primary">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Search History Panel (Hidden by default) -->
+        <div id="historyPanel" class="history-panel hidden">
+            <div class="history-header">
+                <h3>Search History</h3>
+                <button id="clearHistory" class="clear-history-btn">Clear All</button>
+            </div>
+            <div id="historyList" class="history-list">
+                <!-- History items will be dynamically added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/suggestions.js"></script>
+    <script src="js/voiceSearch.js"></script>
+    <script src="js/speedDial.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
