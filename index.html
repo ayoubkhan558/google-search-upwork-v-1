@@ -12,6 +12,7 @@
     <div class="container">
         <!-- Header with Google Services -->
         <header class="header">
+            <a href="https://mail.google.com" class="nav-link">Gmail</a>
             <nav class="services-nav">
                 <button id="servicesDropdown" class="services-button apps-btn">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,41 +75,40 @@
 
             <div class="search-container">
                 <div class="search-box">
-                    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 0H16V16H0V0Z" stroke="#E5E7EB" />
-                        <g clip-path="url(#clip0_14213_1073)">
-                            <path
-                                d="M13 6.5C13 7.93437 12.5344 9.25938 11.75 10.3344L15.7063 14.2937C16.0969 14.6844 16.0969 15.3188 15.7063 15.7094C15.3156 16.1 14.6812 16.1 14.2906 15.7094L10.3344 11.75C9.25938 12.5375 7.93437 13 6.5 13C2.90937 13 0 10.0906 0 6.5C0 2.90937 2.90937 0 6.5 0C10.0906 0 13 2.90937 13 6.5ZM6.5 11C7.09095 11 7.67611 10.8836 8.22208 10.6575C8.76804 10.4313 9.26412 10.0998 9.68198 9.68198C10.0998 9.26412 10.4313 8.76804 10.6575 8.22208C10.8836 7.67611 11 7.09095 11 6.5C11 5.90905 10.8836 5.32389 10.6575 4.77792C10.4313 4.23196 10.0998 3.73588 9.68198 3.31802C9.26412 2.90016 8.76804 2.56869 8.22208 2.34254C7.67611 2.1164 7.09095 2 6.5 2C5.90905 2 5.32389 2.1164 4.77792 2.34254C4.23196 2.56869 3.73588 2.90016 3.31802 3.31802C2.90016 3.73588 2.56869 4.23196 2.34254 4.77792C2.1164 5.32389 2 5.90905 2 6.5C2 7.09095 2.1164 7.67611 2.34254 8.22208C2.56869 8.76804 2.90016 9.26412 3.31802 9.68198C3.73588 10.0998 4.23196 10.4313 4.77792 10.6575C5.32389 10.8836 5.90905 11 6.5 11Z"
-                                fill="#9CA3AF" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_14213_1073">
-                                <path d="M0 0H16V16H0V0Z" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <input type="text" id="searchInput" class="search-input" autocomplete="off"
-                        placeholder="Search or type a URL" />
-                    <button id="voiceSearch" class="voice-search-btn" title="Search by voice">
-                        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_14213_1081)">
-                                <g clip-path="url(#clip1_14213_1081)">
-                                    <path
-                                        d="M6 0C4.34375 0 3 1.34375 3 3V8C3 9.65625 4.34375 11 6 11C7.65625 11 9 9.65625 9 8V3C9 1.34375 7.65625 0 6 0ZM2 6.75C2 6.33437 1.66562 6 1.25 6C0.834375 6 0.5 6.33437 0.5 6.75V8C0.5 10.7844 2.56875 13.0844 5.25 13.45V14.5H3.75C3.33437 14.5 3 14.8344 3 15.25C3 15.6656 3.33437 16 3.75 16H6H8.25C8.66562 16 9 15.6656 9 15.25C9 14.8344 8.66562 14.5 8.25 14.5H6.75V13.45C9.43125 13.0844 11.5 10.7844 11.5 8V6.75C11.5 6.33437 11.1656 6 10.75 6C10.3344 6 10 6.33437 10 6.75V8C10 10.2094 8.20937 12 6 12C3.79063 12 2 10.2094 2 8V6.75Z"
-                                        fill="#4B5563" />
+                    <div class="search-box-inner">
+                        <button type="submit" class="search-icon-btn">
+                            <svg class="search-icon" width="16" height="16" stroke="currentColor" fill="currentColor"
+                                stroke-width="0" viewBox="0 0 512 512" height="200px" width="200px"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M464 428 339.92 303.9a160.48 160.48 0 0 0 30.72-94.58C370.64 120.37 298.27 48 209.32 48S48 120.37 48 209.32s72.37 161.32 161.32 161.32a160.48 160.48 0 0 0 94.58-30.72L428 464zM209.32 319.69a110.38 110.38 0 1 1 110.37-110.37 110.5 110.5 0 0 1-110.37 110.37z">
+                                </path>
+                            </svg>
+                        </button>
+
+                        <input type="text" id="searchInput" class="search-input" autocomplete="off"
+                            placeholder="Search or type a URL" />
+                        <button id="voiceSearch" class="voice-search-btn" title="Search by voice">
+                            <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_14213_1081)">
+                                    <g clip-path="url(#clip1_14213_1081)">
+                                        <path
+                                            d="M6 0C4.34375 0 3 1.34375 3 3V8C3 9.65625 4.34375 11 6 11C7.65625 11 9 9.65625 9 8V3C9 1.34375 7.65625 0 6 0ZM2 6.75C2 6.33437 1.66562 6 1.25 6C0.834375 6 0.5 6.33437 0.5 6.75V8C0.5 10.7844 2.56875 13.0844 5.25 13.45V14.5H3.75C3.33437 14.5 3 14.8344 3 15.25C3 15.6656 3.33437 16 3.75 16H6H8.25C8.66562 16 9 15.6656 9 15.25C9 14.8344 8.66562 14.5 8.25 14.5H6.75V13.45C9.43125 13.0844 11.5 10.7844 11.5 8V6.75C11.5 6.33437 11.1656 6 10.75 6C10.3344 6 10 6.33437 10 6.75V8C10 10.2094 8.20937 12 6 12C3.79063 12 2 10.2094 2 8V6.75Z"
+                                            fill="#4B5563" />
+                                    </g>
                                 </g>
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_14213_1081">
-                                    <rect width="12" height="16" fill="white" />
-                                </clipPath>
-                                <clipPath id="clip1_14213_1081">
-                                    <path d="M0 0H12V16H0V0Z" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                    </button>
+                                <defs>
+                                    <clipPath id="clip0_14213_1081">
+                                        <rect width="12" height="16" fill="white" />
+                                    </clipPath>
+                                    <clipPath id="clip1_14213_1081">
+                                        <path d="M0 0H12V16H0V0Z" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
                 <div id="searchSuggestions" class="search-suggestions hidden"></div>
             </div>
@@ -152,7 +152,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="siteUrl">URL</label>
-                                    <input type="url" id="siteUrl" required placeholder="https://www.example.com">
+                                    <input type="text" id="siteUrl" required placeholder="www.example.com" />
                                 </div>
                                 <input type="hidden" id="editIndex" value="">
                                 <div class="modal-buttons">

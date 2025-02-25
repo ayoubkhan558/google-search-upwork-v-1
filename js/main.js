@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Get DOM elements
     const searchInput = document.getElementById('searchInput');
     const historyDropdown = document.createElement('div');
-    historyDropdown.className = 'search-history-dropdown';
-    searchInput.parentElement.appendChild(historyDropdown);
+    historyDropdown.className = 'search-history-dropdown hidden';
+    searchInput.parentElement.parentElement.appendChild(historyDropdown);
 
     // History panel elements
     const historyPanel = document.getElementById('historyPanel');
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `).join('');
 
-        historyDropdown.style.display = 'block';
+        historyDropdown.classList.remove('hidden');
         updateHistoryPanel();
     }
 
     function hideSearchHistory() {
-        historyDropdown.style.display = 'none';
+        historyDropdown.classList.add('hidden');
     }
 
     function updateHistoryPanel() {
@@ -137,17 +137,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchInput.addEventListener('keydown', (e) => {
         const query = e.target.value.trim();
-        const historyVisible = historyDropdown.style.display === 'block';
+        const historyVisible = !historyDropdown.classList.contains('hidden');
+
+        // Prevent default form submission when pressing 'Enter'
+        if (e.key === 'Enter') {
+            e.preventDefault(); // Stop form submission
+            performSearch();
+            return;
+        }
 
         // Prevent default arrow key behavior when history is visible
         if (historyVisible && !query && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
             e.preventDefault();
             handleKeyboardNavigation(e);
-            return;
-        }
-
-        if (e.key === 'Enter') {
-            performSearch();
             return;
         }
 
@@ -188,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </button>
                     </div>
                 `).join('');
-                historyDropdown.style.display = 'block';
+                historyDropdown.classList.remove('hidden');
             }
             updateHistoryPanel();
             return;

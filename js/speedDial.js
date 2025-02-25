@@ -191,18 +191,31 @@ const speedDial = {
         const nameInput = document.getElementById('siteName');
         const urlInput = document.getElementById('siteUrl');
         const indexInput = document.getElementById('editIndex');
-
+    
         const name = nameInput.value.trim();
         let url = urlInput.value.trim();
-
-        // Add https:// if not present
+    
+        // Check if URL is empty after trimming
+        if (!url) {
+            alert('Please enter a URL.');
+            return;
+        }
+    
+        // Add protocol if missing, default to https://
         if (!/^https?:\/\//i.test(url)) {
             url = 'https://' + url;
         }
-
+    
+        // Basic URL validation
+        const urlPattern = /^(https?:\/\/)?([\w\d-]+\.)+[\w\d-]+(\/.*)?$/i;
+        if (!urlPattern.test(url)) {
+            alert('Please enter a valid URL (e.g., www.example.com).');
+            return;
+        }
+    
         const items = storage.getSpeedDial();
         const newItem = { name, url };
-
+    
         if (indexInput.value !== '') {
             // Edit existing item
             items[parseInt(indexInput.value)] = newItem;
@@ -210,7 +223,7 @@ const speedDial = {
             // Add new item
             items.push(newItem);
         }
-
+    
         storage.saveSpeedDial(items);
         this.loadSpeedDial();
         this.hideModal();
