@@ -139,17 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const query = e.target.value.trim();
         const historyVisible = !historyDropdown.classList.contains('hidden');
 
-        // Prevent default form submission when pressing 'Enter'
-        if (e.key === 'Enter') {
-            e.preventDefault(); // Stop form submission
-            performSearch();
+        // Handle keyboard navigation for history items
+        if (historyVisible && !query && (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter')) {
+            e.preventDefault();
+            handleKeyboardNavigation(e);
             return;
         }
 
-        // Prevent default arrow key behavior when history is visible
-        if (historyVisible && !query && (e.key === 'ArrowUp' || e.key === 'ArrowDown')) {
+        // Handle direct search when Enter is pressed
+        if (e.key === 'Enter' && query) {
             e.preventDefault();
-            handleKeyboardNavigation(e);
+            performSearch();
             return;
         }
 
