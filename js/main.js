@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Get DOM elements
     const searchInput = document.getElementById('searchInput');
+    const searchButton = document.querySelector('.search-icon-btn');
     const historyDropdown = document.createElement('div');
     historyDropdown.className = 'search-history-dropdown hidden';
     searchInput.parentElement.parentElement.appendChild(historyDropdown);
@@ -123,10 +124,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (selectedIndex > 0) selectedIndex--;
             else selectedIndex = items.length - 1;
         } else if (event.key === 'Enter' && selectedIndex > -1) {
+            // alert(123);
             event.preventDefault();
-            searchInput.value = items[selectedIndex].textContent;
-            hideSearchHistory();
+            searchInput.value = items[selectedIndex].textContent.trim();
             performSearch();
+            hideSearchHistory();
         } else if (event.key === 'Escape') {
             hideSearchHistory();
         }
@@ -244,6 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const voiceSearchButton = document.getElementById('voiceSearch');
     voiceSearchButton.addEventListener('click', () => {
         voiceSearch.toggle();
+    });
+
+    // Add click event for search button
+    searchButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        performSearch();
     });
 
     // Set up services dropdown
