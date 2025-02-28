@@ -105,25 +105,4 @@ const storage = {
         const updatedHistory = history.filter(item => item.query !== query);
         return this.setSessionStorage(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, updatedHistory);
     },
-
-    /**
-     * Clear search history
-     */
-    clearSearchHistory() {
-        return this.setSessionStorage(CONFIG.STORAGE_KEYS.SEARCH_HISTORY, []);
-    },
-
-    /**
-     * Save last search query
-     */
-    saveLastSearch(query) {
-        return this.setSessionStorage(CONFIG.STORAGE_KEYS.LAST_SEARCH, query);
-    },
-
-    /**
-     * Get last search query
-     */
-    getLastSearch() {
-        return this.getSessionStorage(CONFIG.STORAGE_KEYS.LAST_SEARCH);
-    }
 };

@@ -162,7 +162,16 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    position: relative;
 }
+
+/* .search-text-preview {
+    position: absolute;
+    padding: 5px 10px;
+    margin-left: 28px;
+    background-color: rgb(255, 255, 255);
+    min-width: calc(100% - 25px);
+} */
 
 .search-box .search-icon-btn {
     border: 0px;
@@ -700,124 +709,6 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* History Panel */
-.history-panel {
-    position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    width: 360px;
-    background: white;
-    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-}
-
-.history-panel.visible {
-    transform: translateX(0);
-}
-
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px 20px;
-    border-bottom: 1px solid #e5e7eb;
-}
-
-.history-header h3 {
-    font-size: 16px;
-    color: #202124;
-    margin: 0;
-}
-
-.clear-history-btn {
-    background: none;
-    border: none;
-    color: #1a73e8;
-    font-size: 14px;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-}
-
-.clear-history-btn:hover {
-    background-color: rgba(26, 115, 232, 0.04);
-}
-
-.history-list {
-    overflow-y: auto;
-    height: calc(100vh - 65px);
-    padding: 8px 0;
-}
-
-.history-list .history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.history-list .history-item:hover {
-    background-color: #f8f9fa;
-}
-
-.history-item-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex: 1;
-}
-
-.history-query {
-    color: #202124;
-    font-size: 14px;
-}
-
-.history-time {
-    color: #70757a;
-    font-size: 12px;
-}
-
-.no-history {
-    color: #70757a;
-    text-align: center;
-    padding: 24px;
-    font-size: 14px;
-}
-
-.history-actions {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.clear-item-btn {
-    background: none;
-    border: none;
-    padding: 6px;
-    cursor: pointer;
-    color: #70757a;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.2s ease;
-}
-
-.history-item:hover .clear-item-btn {
-    opacity: 1;
-}
-
-.clear-item-btn:hover {
-    background-color: #f1f3f4;
-    color: #202124;
-}
 
 /* Utility Classes */
 .hidden {

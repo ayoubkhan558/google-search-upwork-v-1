@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container body-container">
         <!-- Header with Google Services -->
         <header class="header">
             <a href="https://mail.google.com" class="nav-link">Gmail</a>
@@ -85,6 +85,7 @@
                                 </path>
                             </svg>
                         </button>
+                        <!-- <span class="search-text-preview"></span>    -->
 
                         <input type="text" id="searchInput" class="search-input" autocomplete="off"
                             placeholder="Search or type a URL" />
@@ -109,6 +110,7 @@
                             </svg>
                         </button>
                     </div>
+                    <div id="search-history-dropdown" class="search-history-dropdown hidden"></div>
                 </div>
                 <div id="searchSuggestions" class="search-suggestions hidden"></div>
             </div>
@@ -165,17 +167,6 @@
                 </div>
             </div>
         </main>
-
-        <!-- Search History Panel (Hidden by default) -->
-        <div id="historyPanel" class="history-panel hidden">
-            <div class="history-header">
-                <h3>Search History</h3>
-                <button id="clearHistory" class="clear-history-btn">Clear All</button>
-            </div>
-            <div id="historyList" class="history-list">
-                <!-- History items will be dynamically added here -->
-            </div>
-        </div>
     </div>
 
     <!-- Scripts -->

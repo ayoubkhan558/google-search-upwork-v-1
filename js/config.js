@@ -66,7 +66,6 @@ const CONFIG = {
     STORAGE_KEYS: {
         SPEED_DIAL: 'speedDial',
         SEARCH_HISTORY: 'searchHistory',
-        LAST_SEARCH: 'lastSearch'
     },
     
     // History settings
