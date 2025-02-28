@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const query = historyItem.querySelector('span').textContent;
             storage.removeFromSearchHistory(query);
             renderSearchHistory();
+            searchInput.focus(); // Keep focus on input to maintain dropdown visibility
             return;
         }
 
@@ -61,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (historyItem) {
             const query = historyItem.querySelector('span').textContent;
             searchInput.value = query;
-            hideSearchHistory();
             performSearch();
+            searchInput.focus(); // Keep focus on input after selection
         }
     });
 
@@ -78,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function selectHistoryItem(index) {
         const items = historyDropdown.querySelectorAll('.history-item');
         items.forEach(item => item.classList.remove('selected'));
-        
+
         if (index >= 0 && index < items.length) {
             items[index].classList.add('selected');
             searchInput.value = items[index].querySelector('span').textContent;
@@ -86,7 +87,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    searchInput.addEventListener('focus', renderSearchHistory);
+    searchInput.addEventListener('focus', () => {
+        renderSearchHistory();
+    });
+
     searchInput.addEventListener('input', (e) => {
         const query = e.target.value.trim();
         if (query) {
@@ -106,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (historyVisible && totalItems > 0 && (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Enter' || e.key === 'Escape')) {
             e.preventDefault();
-            
+
             if (e.key === 'ArrowDown') {
                 currentIndex = (currentIndex + 1) % totalItems;
                 selectHistoryItem(currentIndex);
@@ -115,10 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 selectHistoryItem(currentIndex);
             } else if (e.key === 'Enter' && currentIndex >= 0) {
                 performSearch();
-                hideSearchHistory();
             } else if (e.key === 'Escape') {
                 hideSearchHistory();
-                searchInput.value = query; // Restore original input
+                searchInput.value = ''; // Clear input on escape
             }
             return;
         }
@@ -134,12 +137,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    searchInput.addEventListener('blur', () => {
-        setTimeout(() => {
-            hideSearchHistory();
-            suggestions.clearSuggestions();
-        }, 200);
-    });
+    // Handle focus loss from both input and dropdown
+    function handleFocusLoss(event) {
+        const relatedTarget = event.relatedTarget; // Element gaining focus
+        setTimeout(() => { // Use timeout to ensure focus has fully shifted
+            if (!searchInput.contains(document.activeElement) &&
+                !historyDropdown.contains(document.activeElement)) {
+                hideSearchHistory();
+                suggestions.clearSuggestions();
+            }
+        }, 0);
+    }
+
+    searchInput.addEventListener('focusout', handleFocusLoss);
+    historyDropdown.addEventListener('focusout', handleFocusLoss);
 
     function performSearch() {
         const query = searchInput.value.trim();
@@ -148,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         storage.addToSearchHistory(query);
         const fs = Date.now();
         const searchUrl = utils.generateSearchUrl(query) + `&fs=${fs}`;
-        
+
         setTimeout(() => {
             const rs = Date.now();
             window.location.href = searchUrl + `&rs=${rs}`;
