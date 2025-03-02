@@ -303,7 +303,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     align-items: center;
     padding: 8px 16px;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: background-color 0.2s;
 }
 
