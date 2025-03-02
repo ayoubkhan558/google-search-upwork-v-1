@@ -371,7 +371,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     text-align: center;
     text-decoration: none;
     color: #3c4043;
-    padding: 16px;
+    padding: 16px 0;
     border-radius: 8px;
     transition: background-color 0.2s;
     position: relative;
@@ -464,8 +464,8 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
 
 .speed-dial-actions {
     position: absolute;
-    top: 8px;
-    right: 8px;
+    top: 0px;
+    right: 0px;
     display: none;
     gap: 4px;
 }
