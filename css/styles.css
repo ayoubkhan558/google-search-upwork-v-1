@@ -359,7 +359,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
 .speed-dial-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
-    gap: 24px;
+    gap: 0px 24px;
     padding: 16px;
     margin-bottom: 24px;
 }
@@ -368,11 +368,12 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 5px;
     text-align: center;
     text-decoration: none;
     color: #3c4043;
     width: fit-content;
-    padding: 16px 0;
+    padding: 8px 8px;
     border-radius: 8px;
     transition: background-color 0.2s;
     position: relative;
@@ -464,15 +465,16 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
 }
 
 .speed-dial-actions {
-    position: absolute;
+    /* position: absolute;
     top: 0px;
-    right: 0px;
-    display: none;
+    right: 0px; */
+    display: flex;
+    opacity: 0;
     gap: 4px;
 }
 
 .speed-dial-item:hover .speed-dial-actions {
-    display: flex;
+    opacity: 1;
 }
 
 .speed-dial-action-btn {
