@@ -371,6 +371,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     text-align: center;
     text-decoration: none;
     color: #3c4043;
+    width: fit-content;
     padding: 16px 0;
     border-radius: 8px;
     transition: background-color 0.2s;
