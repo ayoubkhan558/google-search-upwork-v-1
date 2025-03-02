@@ -69,7 +69,7 @@ const CONFIG = {
     },
     
     // History settings
-    MAX_HISTORY_ITEMS: 100,
+    MAX_HISTORY_ITEMS: 10,
     
     // Animation durations (in ms)
     ANIMATION_DURATION: 300

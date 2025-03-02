@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const historyDropdown = document.getElementById('search-history-dropdown');
     let currentIndex = -1; // Track currently selected history item
 
+    // Clear search input on page load
+    searchInput.value = '';
+
     function renderSearchHistory() {
         const query = searchInput.value.trim();
         if (query) {
