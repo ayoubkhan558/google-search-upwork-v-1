@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const historyList = storage.getSearchHistory();
         if (!historyList || historyList.length === 0) {
-            historyDropdown.innerHTML = '<div class="no-history">No search history</div>';
-            showSearchHistory();
+            hideSearchHistory();
+            // historyDropdown.innerHTML = '<div class="no-history">No search history</div>';
+            // showSearchHistory();
             return;
         }
 

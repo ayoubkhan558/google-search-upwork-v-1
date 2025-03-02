@@ -178,6 +178,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     box-shadow: none;
     outline: none;
     background: none;
+    cursor: pointer;
 }
 
 .search-icon {
