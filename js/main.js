@@ -148,6 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!searchInput.contains(document.activeElement) &&
                 !historyDropdown.contains(document.activeElement)) {
                 hideSearchHistory();
+                // console.log("handleFocusLoss");
                 suggestions.clearSuggestions();
             }
         }, 0);
@@ -188,12 +189,12 @@ document.addEventListener('DOMContentLoaded', () => {
         servicesMenu.classList.toggle('hidden');
     });
 
-    document.addEventListener('click', (e) => {
-        if (!servicesDropdown.contains(e.target)) {
-            servicesMenu.classList.add('hidden');
-        }
-        if (!searchInput.contains(e.target)) {
-            suggestions.clearSuggestions();
-        }
-    });
+    // document.addEventListener('click', (e) => {
+    //     if (!servicesDropdown.contains(e.target)) {
+    //         servicesMenu.classList.add('hidden');
+    //     }
+    //     if (!searchInput.contains(e.target)) {
+    //         suggestions.clearSuggestions();
+    //     }
+    // });
 });

@@ -25,7 +25,7 @@ body {
     gap: 25px;
     padding: 15px;
     width: 100%;
-    position: fixed;
+    position: absolute;
     right: 15px;
     top: 5px;
 }
@@ -40,6 +40,7 @@ body {
 
 .services-nav {
     position: relative;
+    z-index: 1000;
 }
 
 .services-button {
@@ -126,6 +127,8 @@ body {
     max-width: 700px;
     margin: 0 auto;
     margin-top: 100px;
+    position: relative;
+    z-index: 0;
 }
 
 .search-container {
@@ -151,6 +154,8 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     /* box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1); */
     padding: 8px 16px;
     width: 100%;
+    position: relative;
+    z-index: 5;
     transition: box-shadow 0.2s;
 }
 
@@ -294,7 +299,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     background: white !important;
     border-radius: 0px 0px 15px 15px;
     box-shadow: none !important;
-    z-index: 1000;
+    z-index: 100;
     margin-top: -2px;
 }
 
@@ -355,14 +360,18 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
 .speed-dial-section {
     margin-top: 32px;
     width: 100%;
+    position: relative;
+    z-index: 0;
 }
 
 .speed-dial-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 0px 24px;
     padding: 16px;
     margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
 }
 
 .speed-dial-item {
@@ -378,6 +387,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     border-radius: 8px;
     transition: background-color 0.2s;
     position: relative;
+    z-index: 2;
 }
 
 .speed-dial-item.add-item {
@@ -406,6 +416,8 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    position: relative;
+    z-index: 3;
 }
 
 .speed-dial-icon {
@@ -516,7 +528,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .modal.hidden {
@@ -667,7 +679,7 @@ body:has(.search-history-dropdown:not(.hidden)) .search-box {
     background: white !important;
     border-radius: 0px 0px 15px 15px;
     box-shadow: none !important;
-    z-index: 1000;
+    z-index: 100;
     margin-top: -2px;
     max-height: 300px;
     overflow-y: auto;
