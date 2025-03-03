@@ -188,13 +188,4 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         servicesMenu.classList.toggle('hidden');
     });
-
-    // document.addEventListener('click', (e) => {
-    //     if (!servicesDropdown.contains(e.target)) {
-    //         servicesMenu.classList.add('hidden');
-    //     }
-    //     if (!searchInput.contains(e.target)) {
-    //         suggestions.clearSuggestions();
-    //     }
-    // });
 });
