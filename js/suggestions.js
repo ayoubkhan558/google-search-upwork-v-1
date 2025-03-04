@@ -99,7 +99,7 @@ const suggestions = {
     hideSuggestions() {
         document.querySelector(".search-container").classList.remove('suggestions-dropdown-shown');
         const container = document.getElementById('searchSuggestions');
-        // container.innerHTML = '';
+        container.innerHTML = '';
         setTimeout(() => {
             container.classList.add('hidden');
         }, 100);
