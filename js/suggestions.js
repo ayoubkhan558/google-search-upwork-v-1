@@ -18,7 +18,7 @@ const suggestions = {
         }
 
         if (!query.trim()) {
-            this.clearSuggestions();
+            this.hideSuggestions();
             return;
         }
 
@@ -39,7 +39,7 @@ const suggestions = {
      */
     handleSuggestionsResponse(data) {
         if (!Array.isArray(data) || !Array.isArray(data[1])) {
-            this.clearSuggestions();
+            this.hideSuggestions();
             return;
         }
 
@@ -57,10 +57,12 @@ const suggestions = {
      * Display suggestions in the dropdown
      */
     displaySuggestions(items) {
+        document.querySelector(".search-container").classList.add('suggestions-dropdown-shown');
         const container = document.getElementById('searchSuggestions');
         container.innerHTML = '';
 
         if (!items.length) {
+            document.querySelector(".search-container").classList.remove('suggestions-dropdown-shown');
             container.classList.add('hidden');
             return;
         }
@@ -85,9 +87,22 @@ const suggestions = {
      * Clear suggestions dropdown
      */
     clearSuggestions() {
+        document.querySelector(".search-container").classList.remove('suggestions-dropdown-shown');
+        const container = document.getElementById('searchSuggestions');
+        container.innerHTML = '';
+        container.classList.add('hidden');
+    },
+
+    /**
+     * Hide suggestions dropdown
+     */
+    hideSuggestions() {
+        document.querySelector(".search-container").classList.remove('suggestions-dropdown-shown');
         const container = document.getElementById('searchSuggestions');
         // container.innerHTML = '';
-        // container.classList.add('hidden');
+        setTimeout(() => {
+            container.classList.add('hidden');
+        }, 100);
     },
 
     /**
@@ -125,7 +140,7 @@ const suggestions = {
                 break;
 
             case 'Escape':
-                this.clearSuggestions();
+                this.hideSuggestions();
                 break;
         }
     }

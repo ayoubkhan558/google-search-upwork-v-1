@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             suggestions.fetch(query);
             hideSearchHistory();
         } else {
-            suggestions.clearSuggestions();
+            suggestions.hideSuggestions();
             renderSearchHistory();
         }
     });
@@ -148,8 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!searchInput.contains(document.activeElement) &&
                 !historyDropdown.contains(document.activeElement)) {
                 hideSearchHistory();
-                // console.log("handleFocusLoss");
-                suggestions.clearSuggestions();
+                suggestions.hideSuggestions();
             }
         }, 0);
     }
