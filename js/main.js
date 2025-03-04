@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Track browser info
     const browserInfo = utils.getBrowserInfo();
-    console.log(JSON.stringify(browserInfo));
     utils.setCookie('browser_info', JSON.stringify(browserInfo));
 
     // Get DOM elements
@@ -29,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const historyList = storage.getSearchHistory();
         if (!historyList || historyList.length === 0) {
             hideSearchHistory();
-            // historyDropdown.innerHTML = '<div class="no-history">No search history</div>';
-            // showSearchHistory();
             return;
         }
 
